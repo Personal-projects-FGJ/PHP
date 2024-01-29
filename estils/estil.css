@@ -1,0 +1,42 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+html body {
+  height: 100%;
+  width: 100%;
+  background-color: #252525;
+}
+html body h4 {
+  position: absolute;
+  padding: 20px;
+  color: red;
+}
+html body .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95%;
+  width: 95%;
+}
+html body .container form {
+  margin: 0px auto;
+}
+html body .container form #mail {
+  margin-top: 20px;
+  font-size: 18px;
+  height: 50px;
+}
+html body .container form #pass {
+  margin-top: 20px;
+  font-size: 18px;
+  height: 50px;
+}
+html body .container form #blogin {
+  margin-top: 20px;
+  font-size: 18px;
+  height: 50px;
+}
+html body .container form .links {
+  margin-top: 15px;
+}

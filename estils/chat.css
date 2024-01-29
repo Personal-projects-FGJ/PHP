@@ -1,0 +1,317 @@
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/raleway/v29/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCIPrQ.ttf) format('truetype');
+}
+* {
+  box-sizing: border-box;
+}
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+p {
+  margin: 0;
+}
+:root {
+  --d: 2500ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: #a8efff;
+  --c2: rgba(168, 239, 255, 0.1);
+}
+.wrapper {
+  min-width: min(40rem, 100%);
+}
+.box {
+  height: 475px;
+  border: 0.35rem solid #000000;
+  padding: 20px;
+  width: 360px;
+  margin: 20px;
+  text-align: center;
+  border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+  animation: borderRotate var(--d) linear infinite forwards;
+  cursor: pointer;
+}
+.box span {
+  color: orange;
+}
+.box:hover {
+  background-color: #2f2f2f;
+}
+.box img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 1em;
+}
+.box h3 {
+  color: #ffcc00;
+  margin-bottom: 5px;
+}
+.box h6 {
+  color: grey;
+  margin: 0;
+}
+.box form {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+.box button {
+  font-size: 14px;
+}
+/* .box button:hover {
+    background-color: #cd9a02;;
+    -webkit-box-shadow: 0px 0px 6px 3px #fff;
+    box-shadow: 0px 0px 5px 2px #fff;
+    cursor: pointer;
+} */
+.box:nth-child(2) {
+  border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+  animation: borderRadial var(--d) linear infinite forwards;
+}
+@keyframes borderRotate {
+  100% {
+    --angle: 420deg;
+  }
+}
+@keyframes borderRadial {
+  20% {
+    --gradX: 100%;
+    --gradY: 50%;
+  }
+  40% {
+    --gradX: 100%;
+    --gradY: 100%;
+  }
+  60% {
+    --gradX: 50%;
+    --gradY: 100%;
+  }
+  80% {
+    --gradX: 0%;
+    --gradY: 50%;
+  }
+  100% {
+    --gradX: 50%;
+    --gradY: 0%;
+  }
+}
+html {
+  height: 100vw;
+  width: 99%;
+}
+html hr {
+  height: 2px;
+  margin: 50px 0;
+  background: linear-gradient(to right, transparent, #cccccc00, transparent);
+  border: 0;
+  width: 80%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+html hr:after {
+  content: '';
+  display: block;
+  height: 4px;
+  background: radial-gradient(circle, #8d8d8d 0%, rgba(168, 239, 255, 0) 100%);
+  width: 90%;
+  margin: -6px auto 0;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+html .cate {
+  color: #e44891;
+}
+html body {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #252525;
+  color: white;
+}
+html body #f1 {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  background-color: #565656;
+  padding: 25px;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  cursor: pointer;
+  border-radius: 1em;
+  border: 2px solid white;
+  transition: 0.3s;
+}
+html body #b2 {
+  align-self: flex-start;
+  margin-top: 60px;
+}
+html body #b4 {
+  align-self: center;
+}
+html body #bt {
+  border: 0.3em solid #393939;
+  margin-right: 25px;
+  /* &:hover{
+                background-color: #cd9a02;
+                -webkit-box-shadow: 0px 0px 6px 3px #fff; 
+                box-shadow: 0px 0px 5px 2px #fff;
+                cursor:pointer;
+            } */
+}
+html body #bt i {
+  font-size: small;
+}
+html body h1 {
+  margin: 0px auto;
+  padding: 20px;
+  color: orange;
+  font-weight: bold;
+}
+@media (min-width: 1400px) {
+  html body h1 {
+    font-size: 110px;
+  }
+}
+@media (max-width: 1400px) {
+  html body h1 {
+    font-size: 80px;
+  }
+}
+@media (max-width: 1000px) {
+  html body h1 {
+    font-size: 50px;
+  }
+}
+html body input[type=file]::file-selector-button {
+  border: none;
+  font-size: 30px;
+  padding: 0.4em 0.4em;
+  border-radius: 0.3em;
+  background-color: #ffc400;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+html body input[type=file]::file-selector-button:hover {
+  background-color: #cd9a02;
+}
+html body .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 95%;
+  width: 95%;
+  margin: 0px 0px;
+  flex-direction: row;
+}
+html body .citems {
+  background-image: url(../imgs/bkground2.png);
+  background-size: contain;
+  /* border-radius: 100%; */
+}
+html body * {
+  box-sizing: border-box;
+}
+html body p {
+  margin: 0;
+}
+html body :root {
+  --d: 2500ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: #a8efff;
+  --c2: rgba(168, 239, 255, 0.1);
+}
+html body body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #252525;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+html body .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 95%;
+  margin: 20px 0;
+}
+html body .fup {
+  height: 475px;
+  font-size: 20px;
+  margin: 20px;
+  border: 0.35rem solid gray;
+  padding: 20px;
+  width: 360px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+html body .fup span {
+  color: orangered;
+}
+html body .fup .cate {
+  color: #f60073;
+}
+html body .fup:hover {
+  background-color: #565656;
+}
+html body .fup img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 1em;
+}
+html body .fup h3 {
+  color: #ffcc00;
+  margin-bottom: 5px;
+}
+html body .fup h6 {
+  color: grey;
+  margin: 0;
+}
+html body .fup form {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+html body .fup button {
+  font-size: 14px;
+}
+html body .fup2 {
+  width: 500px;
+  font-size: 30px;
+  margin: max(1rem, 30px);
+  border: 0.35rem solid;
+  padding: 30px;
+}
+html body .fup3 {
+  font-size: 30px;
+  margin: max(1rem, 30px);
+  padding: 30px;
+}

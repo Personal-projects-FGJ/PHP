@@ -1,0 +1,375 @@
+@darkgray: rgb(37, 37, 37);
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:400");
+
+* {
+	box-sizing: border-box;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+
+
+
+p {
+	margin: 0;
+}
+
+:root {
+	--d: 2500ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: rgba(168, 239, 255, 1);
+	--c2: rgba(168, 239, 255, 0.1);
+}
+
+.wrapper {
+	min-width: min(40rem, 100%);
+}
+
+.box {
+    height:475px;
+    border: 0.35rem solid rgb(0, 0, 0);
+    padding: 20px;
+    width: 360px;
+    margin: 20px;
+    text-align: center;
+    cursor: pointer;
+	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+	animation: borderRotate var(--d) linear infinite forwards;
+    cursor:pointer;
+    span{
+        color:orange;
+    }
+}
+.box:hover {
+    background-color: rgb(47, 47, 47);
+}
+
+.box img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 1em;
+}
+
+.box h3 {
+    color: rgb(255, 204, 0);
+    margin-bottom: 5px;
+}
+
+.box h6 {
+    color: grey;
+    margin: 0;
+}
+
+.box form {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.box button {
+    font-size: 14px;
+}
+
+/* .box button:hover {
+    background-color: #cd9a02;;
+    -webkit-box-shadow: 0px 0px 6px 3px #fff;
+    box-shadow: 0px 0px 5px 2px #fff;
+    cursor: pointer;
+} */
+
+.box:nth-child(2) {
+	border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+	animation: borderRadial var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+
+@keyframes borderRadial {
+	20% {
+		--gradX: 100%;
+		--gradY: 50%;
+	}
+	40% {
+		--gradX: 100%;
+		--gradY: 100%;
+	}
+	60% {
+		--gradX: 50%;
+		--gradY: 100%;
+	}
+	80% {
+		--gradX: 0%;
+		--gradY: 50%;
+	}
+	100% {
+		--gradX: 50%;
+		--gradY: 0%;
+	}
+}
+html{
+    hr {
+        height: 2px;
+        margin: 50px 0;
+        background: linear-gradient(to right, transparent, #cccccc00, transparent);
+        border: 0;
+        width: 80%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    hr:after {
+        content: '';
+        display: block;
+        height: 4px;
+        background: radial-gradient(circle, rgb(141, 141, 141) 0%, rgba(168, 239, 255, 0) 100%);
+        width: 90%;
+        margin: -6px auto 0;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    
+
+    .cate{
+        color:rgb(228, 72, 145);
+    }
+    
+    height: 100vw;
+    width: 99%;
+    
+    
+    body{
+       
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: @darkgray;
+        color:white;
+        #f1{
+            display: flex;
+            flex-direction: column;
+            width:20%;
+            background-color: rgb(86, 86, 86);
+            padding:25px;
+            margin-top: 60px;
+            margin-bottom: 100px;
+            cursor:pointer;
+            border-radius: 1em;
+            border: 2px solid white;
+            transition:0.3s;
+        }
+        #b2{
+            align-self: flex-start;
+            margin-top: 60px;
+        } 
+        #b4{
+            align-self: center;
+        }
+        #bt{
+            border:0.3em solid rgb(57, 57, 57);
+            margin-right: 25px;
+            /* &:hover{
+                background-color: #cd9a02;
+                -webkit-box-shadow: 0px 0px 6px 3px #fff; 
+                box-shadow: 0px 0px 5px 2px #fff;
+                cursor:pointer;
+            } */
+            i{
+                font-size: small;
+            }
+        }
+        
+       
+        h1 {
+            margin: 0px auto;
+            padding: 20px;
+            color: orange;
+            font-weight: bold;
+        }
+        
+        @media (min-width: 1400px) {
+            h1 {
+                font-size: 110px;
+            }
+        }
+        @media (max-width: 1400px) {
+            h1 {
+                font-size: 80px;
+            }
+        }
+        @media (max-width: 1000px) {
+            h1 {
+                font-size: 50px;
+            }
+        }
+
+        input[type=file]::file-selector-button {
+            border: none;
+            font-size: 30px;
+            padding: .4em .4em;
+            border-radius: .3em;
+            background-color: rgb(255, 196, 0);
+            margin-bottom: 10px;
+            cursor:pointer;
+        }
+        input[type=file]::file-selector-button:hover {
+            background-color: #cd9a02;
+        }
+
+        
+        .row{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            height: 95%;
+            width: 95%;
+            margin:0px 0px;
+            flex-direction: row;
+            
+           
+            
+        }
+
+        .citems {
+            background-image: url(../imgs/bkground2.png);
+            background-size: contain;
+            /* border-radius: 100%; */
+            
+            
+
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        :root {
+            --d: 2500ms;
+            --angle: 90deg;
+            --gradX: 100%;
+            --gradY: 50%;
+            --c1: rgba(168, 239, 255, 1);
+            --c2: rgba(168, 239, 255, 0.1);
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(37, 37, 37);
+            color: white;
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 95%;
+            margin: 20px 0;
+        }
+
+        .fup {
+            height: 475px;
+            font-size: 20px;
+            margin: 20px;
+            border: 0.35rem solid gray;
+            padding: 20px;
+            width: 360px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            span{
+                color:orangered;
+            }
+            .cate{
+                color:rgb(246, 0, 115);
+            }
+        }
+
+        .fup:hover {
+            background-color: rgb(86, 86, 86);
+        }
+
+        .fup img {
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 1em;
+        }
+
+        .fup h3 {
+            color: rgb(255, 204, 0);
+            margin-bottom: 5px;
+        }
+
+        .fup h6 {
+            color: grey;
+            margin: 0;
+        }
+
+        .fup form {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+
+        .fup button {
+            font-size: 14px;
+        }
+
+        
+        .fup2 {
+            width: 500px;
+            font-size: 30px;
+            margin: max(1rem, 30px);
+            border: 0.35rem solid;
+            padding: 30px;
+        }
+        .fup3 {
+            font-size: 30px;
+            margin: max(1rem, 30px);
+           
+            padding: 30px;
+        }
+        
+
+    }
+   
+
+    
+}

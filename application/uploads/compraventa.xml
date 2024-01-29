@@ -1,0 +1,24 @@
+<operacions>
+
+    <operacio>
+        <tipus>compra</tipus>
+        <id_producte>1</id_producte>
+        <quantitat>50</quantitat>
+    </operacio>
+	<operacio>
+        <tipus>venta</tipus>
+        <id_producte>2</id_producte>
+        <quantitat>22</quantitat>
+    </operacio>
+    <operacio>
+        <tipus>venta</tipus>
+        <id_producte>3</id_producte>
+        <quantitat>13</quantitat>
+    </operacio>
+	<operacio>
+        <tipus>venta</tipus>
+        <id_producte>4</id_producte>
+        <quantitat>3</quantitat>
+    </operacio>
+
+</operacions>

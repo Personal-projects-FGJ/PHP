@@ -1,0 +1,14 @@
+<operaciones>
+
+    <operacion>
+        <tipo>compra</tipo>
+        <id_producto>1</id_producto>
+        <cantidad>10</cantidad>
+    </operacion>
+    <operacion>
+        <tipo>venta</tipo>
+        <id_producto>3</id_producto>
+        <cantidad>5</cantidad>
+    </operacion>
+
+</operaciones>
